@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  # Бекенд
+  server:
+    build: ./server
+    container_name: ai-seller-server
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./server:/app
+      - /app/node_modules
+    environment:
+      - PORT=8080
+      - VITE_API_URL=http://host.docker.internal:8080
+    restart: unless-stopped
+
+  # Фронтенд
+  client:
+    build: ./client
+    container_name: ai-seller-client
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./client:/app
+      - /app/node_modules
+    depends_on:
+      - server
+    environment:
+      - VITE_API_URL=http://localhost:8080
+      - VITE_OLLAMA_URL=http://host.docker.internal:11434
+    restart: unless-stopped
