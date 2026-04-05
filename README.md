@@ -1,10 +1,5 @@
 # AI-Seller — Умный помощник для продавцов
 
-[![React](https://img.shields.io/badge/React-19-blue.svg)](https://reactjs.org/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.9-blue.svg)](https://www.typescriptlang.org/)
-[![Vite](https://img.shields.io/badge/Vite-7-purple.svg)](https://vitejs.dev/)
-[![Docker](https://img.shields.io/badge/Docker-✔-blue.svg)](https://www.docker.com/)
-
 > **AI-ассистент, который помогает создавать идеальные описания товаров и определять рыночную цену**
 
 ## О проекте
@@ -75,7 +70,6 @@ docker compose up --build
 - *Фронтенд*: http://localhost:5173
 - *API*: http://localhost:8080
 
-
 ## AI-функции
 
 Для подключения AI через *Ollama*:
@@ -89,8 +83,8 @@ docker compose up --build
 ollama pull mistral
 
 ```
-
-## Структура проекта
+<details>
+<summary>Структура проекта (нажмите, чтобы развернуть)</summary>
 
 AI-Seller/
 ├── client/ # React + TypeScript
@@ -111,6 +105,8 @@ AI-Seller/
 │
 └── docker-compose.yml # Docker
 
+</details>
+
 ## Основные страницы
 
 | Страница | Роут | Описание |
@@ -121,7 +117,7 @@ AI-Seller/
 
 ## Принятые решения
 
-### Почему без UI-библиотеки?
+### Отказ от UI-библиотеки
 
 - **Точное соответствие** макетам Figma
 - **Полный контроль** над стилями
@@ -149,22 +145,14 @@ MobX и Redux лучше подходят для сложного **клиент
 
 ### Архитектура
 
-- **Страницы** изолированы в `App/pages/`
-- **Общие компоненты**, хуки и утилиты вынесены в отдельные папки
-- **React Query** для управления серверным состоянием
-- **Zod** для валидации форм
-- **Кастомный хук useForm** для управления формой
+| Список объявлений | Просмотр товара | Редактирование с AI |
+|:-----------------:|:---------------:|:-------------------:|
+| ![](./screenshots/products-page.png) | ![](./screenshots/product-page.png) | ![](./screenshots/edit-page.png) |
+| Фильтрация, поиск, пагинация | Детальная информация | AI-генерация описания и цены |
 
 ## Скриншоты
 
-**Страница списка объявлений**
-![](./screenshots/products-page.png)
 
-**Страница просмотра товара**
-![](./screenshots/product-page.png)
-
-**Страница редактирования с AI-помощником**
-![](./screenshots/edit-page.png)
 
 👤 Автор
 [Arina Fariseeva]
