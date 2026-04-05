@@ -47,8 +47,6 @@ export function useForm({
             }
         }
 
-        console.log(field, value, 'FIELD')
-
         setForm(prev => ({
             ...prev,
             'params': {

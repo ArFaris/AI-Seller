@@ -38,7 +38,6 @@ export const getItem = async (id:  string) => {
     }
 
     const data = await res.json();
-    console.log('данные', data);
     
     return data;
 }

@@ -11,7 +11,6 @@ export type CheckBoxProps = Omit<
 };
 
 const CheckBox = ({onChange, ...props}: CheckBoxProps) => {
-  console.log(props.checked)
   return (
     <label className={cn(props.className, s.checkbox)}>
       <input type="checkbox" onChange={(e) => onChange(e.target.checked)} {...props}/>

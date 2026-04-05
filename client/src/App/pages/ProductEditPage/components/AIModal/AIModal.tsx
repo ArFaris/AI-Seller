@@ -22,8 +22,6 @@ const AIModal = ({handleGenerate, isPending, isError = true, recommended, button
         setRecommended(null);
     }
 
-    console.log(isError,  recommended)
-
     return (
         <>
             <Button 

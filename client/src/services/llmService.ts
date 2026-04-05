@@ -46,7 +46,6 @@ async function callOllama(prompt: string): Promise<string> {
 }
 
 export async function generateDescription(product: ProductFormData): Promise<string> {
-    console.log('generate begin')
     const prompt = generateDescriptionPrompt(product);
     return callOllama(prompt);
 }

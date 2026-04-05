@@ -82,11 +82,8 @@ const ProductEditPage = () => {
     const { mutateAsync: updateItem } = useUpdateItem();
     const { mutateAsync: generateDescription, isPending: isDescriptionPending, isError: isDescriptionError } = useGenerateDescription();
     const { mutateAsync: generatePrice, isPending: isPricePending, isError: isPriceError } = useSuggestPrice();
-
-    console.log(isDescriptionError)
     
     const update = async (data: ProductFormData) => {
-        console.log(id, data)
         if (!id) return;
 
         try {

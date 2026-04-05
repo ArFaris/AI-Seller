@@ -70,7 +70,6 @@ const ProductPage = () => {
                             {
                                 fields.map(field => {
                                     if (field.isEmpty) return;
-                                    console.log('поле', field)
                                     return (<span className={s.charac} key={field.key}>
                                         <Text view='p-16' color='secondary' weight='bold' className={s.charac__key}>{field.label}</Text>
                                         <Text view='p-16'>{field.value}</Text>
