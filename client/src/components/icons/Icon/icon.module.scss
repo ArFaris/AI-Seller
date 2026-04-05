@@ -1,0 +1,27 @@
+@import 'styles/variables.scss';
+
+.color {
+    &-white {
+        color: $text-light;
+    }
+
+    &-black {
+        color: $text-primary;
+    }
+
+    &-totalBlack {
+        color: $total-black;
+    }
+
+    &-accent {
+        color: $button-accent-text;
+    }
+
+    &-error {
+        color: $tooltip-bg-error;
+    }
+
+    &-disabled {
+        color: $button-secondary-bg;
+    }
+}

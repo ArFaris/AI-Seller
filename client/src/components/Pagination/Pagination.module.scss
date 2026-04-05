@@ -1,0 +1,10 @@
+@import 'styles/variables.scss';
+@import 'styles/global.scss';
+
+.pagination {
+    position: absolute;
+    display: flex;
+    gap: $gap-8;
+    bottom: $pagination-bottom;
+    left: 0;
+}

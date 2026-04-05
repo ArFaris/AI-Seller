@@ -1,0 +1,129 @@
+@import './fonts/Roboto/fonts.scss';
+@import './variables.scss';
+
+.page {
+    padding: 32px;
+    min-width: 100vw;
+    min-height: 100vh;
+}
+
+@media(max-width: 1280px) {
+  .page {
+    max-width: calc(100% - 100px);
+  }
+}
+
+@media(max-width: 414px) {
+  .page {
+    max-width: calc(100% - 48px);
+  }
+}
+
+html, body {
+  font-family: 'Roboto';
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+body > * {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+figure,
+pre,
+ul,
+li {
+  margin: 0;
+}
+
+ul,
+li {
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: $transition;
+}
+
+body {
+  background-color: $text-light;
+}
+
+button, svg {
+  cursor: pointer;
+}
+
+#root {
+  margin: 0 auto;
+}
+
+input {
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus,
+    &:-webkit-autofill:active {
+        -webkit-box-shadow: 0 0 0 30px white inset !important;
+        box-shadow: 0 0 0 30px white inset !important;
+        -webkit-text-fill-color: $text-primary !important;
+        caret-color: $text-primary;
+        border-radius: inherit;
+    }
+}
+
+.line {
+    height: 1px;
+    background-color: $filter-line;
+
+    &__ptoduct {
+      margin-block: 32px;
+    }
+}
+
+.rotate {
+    transform: rotate(-180deg);
+}
+
+.text-error {
+    color: #b42432;
+    text-align: left;
+}
+
+.close-icon {
+    position: absolute;
+    top: 30px;
+    right: 25px;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.25);
+    z-index: 1001;
+    backdrop-filter: blur(2px);
+}
+
+@media (max-width: 768px) {
+  input, select {
+    font-size: 16px;
+  }
+}

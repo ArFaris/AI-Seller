@@ -1,0 +1,48 @@
+@import 'styles/variables.scss';
+@import 'styles/global.scss';
+
+.filter {
+    padding: $filter-padding;
+    border-radius: $button-radius;
+    background-color: $text-light;
+    width: 100%;
+    min-width: $filter-width;
+    display: flex;
+    flex-direction: column;
+    gap: $filter-gap;
+}
+
+.title {
+    font-weight: 500;
+}
+
+.category {
+    display: flex;
+    gap: $gap-8;
+}
+
+.button {
+    width: 100%;
+    background-color: $text-light;
+    margin-top: $filter-gap;
+}
+
+.wrapper {
+    max-width: 256px;
+}
+
+.dropdown {
+    border: none;
+    background-color: transparent;
+}
+
+.dropdown > * {
+    min-width: 100%;
+    box-shadow: none;
+}
+
+.dropdown > :nth-child(2) {
+    position: relative;
+    border: none;
+    background-color: transparent;
+}

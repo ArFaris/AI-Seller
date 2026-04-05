@@ -1,0 +1,88 @@
+@import 'styles/variables.scss';
+
+.input input:focus:not(:disabled) {
+    border: 1px solid $elem-accent;
+    box-shadow: 0 0 0 2px $input-shadow;
+    outline: none;
+}
+
+.input input {
+    min-width: 100%;
+    min-height: $input-height;
+    padding: $input-padding;
+    color: $input-text;
+    border: 1px solid $text-accent;
+    border-radius: $button-radius;
+
+    &[data-full='true'] {
+        border: 1px solid $button-secondary-bg;
+    }
+
+    &[data-error='true'] {
+        border-color: $error;
+    }
+}
+
+.input input::placeholder {
+    color: $placeholder;
+}
+
+.input input:disabled {
+    background-color: $button-primary-text;
+    color: rgba(0, 0, 0, 0.2);
+}
+
+.input {
+    position: relative;
+    transition: $transition;
+    width: 100%;
+
+    &__after {
+        position: absolute;
+        top: var(--top);
+        right: var(--right);
+    }
+}
+
+.error {
+    input {
+        transition: all 0.5s ease;
+        border: 1px solid $error;
+    }
+}
+
+.gray {
+    input {
+        border: none;
+        background-color: $input-bg;
+        color: $text-primary;
+    }
+
+    input::placeholder {
+        color: $input-placeholder;
+    }
+
+    &__multi {
+        input {
+            border: 4px solid $input-bg;
+            background-color: $text-light;
+        }
+    }
+}
+
+.editmode input:not(:disabled) {
+    display: block;
+    min-width: auto;
+    width: 100%;
+}
+
+@media(max-width: 768px) {
+    .editmode input:not(:disabled) {
+        min-width: 100%;
+        max-width: auto;
+    }
+
+    .input.editmode {
+        min-width: 100%;
+    }
+}

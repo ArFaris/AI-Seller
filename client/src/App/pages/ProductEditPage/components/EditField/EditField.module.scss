@@ -1,0 +1,27 @@
+@import 'styles/variables.scss';
+@import 'styles/global.scss';
+
+.field {
+    max-width: 456px;
+    width: 100%;
+}
+
+.title {
+    display: flex;
+    gap: $gap-8;
+    align-items: center;
+    margin-bottom: $gap-8;
+
+    > * {
+        cursor: unset;
+    }
+}
+
+.error {
+    &__message {
+        font-size: 12px;
+        line-height: 20px;
+        color: $error;
+        margin-top: $gap-8;
+    }
+}

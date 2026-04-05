@@ -1,0 +1,41 @@
+@import 'styles/variables.scss';
+@import 'styles/global.scss';
+
+.multi-dropdown {
+    transition: $transition;
+    cursor: pointer;
+
+    &__title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__option {
+        display: flex;
+        gap: $gap-8;
+        align-items: center;
+
+        &_selected {
+            color: $elem-accent;
+        }
+    }
+
+    &__option:not(:last-child) {
+        margin-bottom: $gap-8;
+    }
+
+    &__option:first-child {
+        margin-top: $gap-8;
+    }
+}
+
+@media(max-width: 768px) {
+    .multi-dropdown {
+        &__option {
+            &:active {
+                color: $elem-accent;
+            }
+        }
+    }
+}

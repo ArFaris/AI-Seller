@@ -1,0 +1,45 @@
+@import 'styles/variables.scss';
+@import 'styles/global.scss';
+
+.notification {
+    position: fixed;
+    top: 32px;
+    right: 32px;
+    border-radius: 1px;
+    padding: 9px 16px;
+    animation: slideIn 0.3s ease-out;
+    z-index: 100000000;
+    max-width: 327px;
+
+    &-error {
+        border: 1px solid $notification-error-border;
+        background-color: $notification-error-bg;
+    }
+
+    &-success {
+        border: 1px solid $notification-success-border;
+        background-color: $notification-success-bg;
+    }
+
+    &__title {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+    }
+
+    &__description {
+        margin-top: 6px;
+        margin-left: 38px;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}

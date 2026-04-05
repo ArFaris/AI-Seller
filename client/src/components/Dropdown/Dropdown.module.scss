@@ -1,0 +1,51 @@
+@import 'styles/variables.scss';
+@import 'styles/global.scss';
+
+.dropdown {
+    position: relative;
+    transition: $transition;
+    max-width: 240px;
+    width: 100%;
+    height: 32px;
+
+    &__options {
+        margin-top: $multi-dropdown-margin-top;
+        position: absolute;
+        left: 0;
+        z-index: 1000;
+        display: block;
+        width: 100%;
+        box-shadow: $box-shadow;
+        border-radius: $button-radius;
+        background-color: $text-light;
+    }
+
+    &__option {
+        border: none;
+        width: 100%;
+        text-align: left;
+        padding: $multi-dropdown-option-padding;
+        min-height: $multi-dropdown-option-height;
+        background-color: transparent;
+
+        &_selected {
+            color: $text-accent;
+        }
+
+        @media(hover: hover) {
+            &:hover {
+                color: $text-accent;
+            }
+        }
+    }
+}
+
+@media(max-width: 768px) {
+    .dropdown {
+        &__option {
+            &:active {
+                color: $text-accent;
+            }
+        }
+    }
+}

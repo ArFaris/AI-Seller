@@ -1,0 +1,53 @@
+@import 'styles/variables.scss';
+@import 'styles/global.scss';
+@import 'styles/fonts/Inter/fonts.scss';
+
+.button {
+    width: fit-content;
+    height: 32px;
+
+    > * {
+        font-size: $font-size-p14;
+        line-height: $line-height-p14;
+    }
+
+    &__group {
+        display: flex;
+        gap: 10px;
+        margin-top: $gap-16;
+
+        &-modal {
+            margin-top: 0;
+        }
+    }
+
+    &__modal {
+        height: auto;
+        width: auto;
+        border-radius: 4px;
+        padding: 0 7px;
+    }
+}
+
+.modal {
+    width: 332px;
+    background-color: $text-light;
+    border-radius: 2px;
+    box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.15);
+    padding: $gap-8;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: $gap-8;
+    left: 480px;
+    bottom: 39px;
+
+    &__text {
+        font-size: 12px;
+        line-height: 16px;
+    }
+
+    &__title {
+        font-weight: 500;
+    }
+}

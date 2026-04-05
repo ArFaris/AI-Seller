@@ -1,0 +1,96 @@
+@import 'styles/variables.scss';
+@import 'styles/global.scss';
+@import 'styles/fonts/Inter/fonts.scss';
+
+.page {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.title {
+    font-weight: 600;
+
+    &__specific {
+        margin-bottom: -10px;
+    }
+}
+
+.specific {
+    display: flex;
+    flex-direction: column;
+    gap: $gap-12;
+}
+
+.dropdown {
+    min-width: 100%;
+}
+
+.dropdown input{
+    border: 1px solid $button-accent-text;
+
+    &:focus:not(:disabled) {
+        border: 1px solid $elem-accent;
+        box-shadow: 0 0 0 2px $input-shadow;
+        outline: none;
+    }
+
+    &:placeholder {
+        color: $placeholder;
+    }
+}
+
+.description {
+    border: 1px solid $button-secondary-bg;
+    border-radius: $gap-8;
+    width: 942px;
+    min-height: 60px;
+    padding: 8px 16px;
+    font-family: 'Inter', sans-serif;
+    font-size: $font-size-p16;
+    line-height: $line-height-button;
+    resize: vertical;
+    margin-bottom: $gap-8;
+    height: fit-content;
+
+    &:disabled {
+        background-color: $multi-dropdown-bg;
+        cursor: not-allowed;
+    }
+
+    &:focus:not(:disabled) {
+        border: 1px solid $elem-accent;
+        box-shadow: 0 0 0 2px $input-shadow;
+        outline: none;
+    }
+
+    &__parent {
+        position: relative;
+        width: 942px;
+    }
+
+    &__counter {
+        position: absolute;
+        right: 0;
+        bottom: 22px;
+    }
+}
+
+.button {
+    &__group {
+        display: flex;
+        gap: 10px;
+        margin-top: $gap-16;
+    }
+}
+
+.price {
+    display: flex;
+    gap: $gap-12;
+    align-items: end;
+    position: relative;
+}
+
+.child {
+    margin-bottom: 81px;
+}

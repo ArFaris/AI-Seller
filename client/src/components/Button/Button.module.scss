@@ -1,0 +1,175 @@
+@import 'styles/variables.scss';
+@import 'styles/global.scss';
+
+.button {
+    --l-button-text: #{$button-primary-text};
+    --l-button-background: #{$elem-accent};
+
+    background-color: var(--l-button-background);
+    display: flex;
+    gap: $gap-8;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border: none;
+    border-radius: $button-radius;
+    padding: $button-default-padd;
+    height: $button-height;
+    transition: background-color 0.3s ease;
+
+    &__text,
+    &__loader {
+        transition: color 0.3s ease;
+    }
+
+    & &__text {
+        color: var(--l-button-text);
+
+        &-white {
+            color: $text-primary;
+        }
+    }
+
+    & &__loader {
+        color: var(--l-button-text);
+    }
+
+    @media(hover: hover) {
+        &:hover:not(:disabled) {
+            --l-button-background: #{$button-primary-bg-hover};
+        }
+    }
+
+    &:active:not(:disabled) {
+        --l-button-background: #{$button-primary-bg-active};
+    }
+
+    &:disabled {
+        pointer-events: none;
+    }
+
+    &_disabled {
+        --l-button-background: #{$button-secondary-bg};
+    }
+
+    &_view {
+        &-secondary {
+            --l-button-background: #{$button-secondary-bg};
+            --l-button-text: #{$button-secondary-text};
+
+            @media(hover: hover) {
+                &:hover:not(:disabled) {
+                    --l-button-background: #{$button-secondary-bg-hover};
+                }
+            }
+
+            &:active:not(:disabled) {
+                --l-button-background: #{$button-secondary-bg-active};
+            }
+        }
+
+        &-accent {
+            --l-button-background: #{$button-accent-bg};
+            --l-button-text: #{$button-accent-text};
+            padding: $button-accent-padd;
+
+            @media(hover: hover) {
+                &:hover:not(:disabled) {
+                    --l-button-background: #{$button-accent-bg-hover};
+                }
+            }
+
+            &:active:not(:disabled) {
+                --l-button-background: #{$button-accent-bg-active};
+            }
+        }
+
+        &-filter {
+            --l-button-background: #{$text-light};
+            --l-button-text: #{$filter-button};
+
+            @media(hover: hover) {
+                &:hover:not(:disabled) {
+                    --l-button-background: #{$button-secondary-bg-hover};
+                    --l-button-text: #{$text-primary};
+                }
+            }
+
+            &:active:not(:disabled) {
+                --l-button-background: #{$button-secondary-bg-active};
+                --l-button-text: #{$text-primary};
+            } 
+        }
+
+        &-pagination {
+            --l-button-background: #{$text-light};
+            --l-button-text: #{$text-primary};
+            border: 1px solid $button-secondary-bg; 
+            width: $pagination-btn-size;
+            max-height: $pagination-btn-size;
+            padding: $pagination-btn-padd;
+
+            @media(hover: hover) {
+                &:hover:not(:disabled) {
+                    border: 1px solid $elem-accent;
+                    --l-button-background: #{$text-light};
+                    --l-button-text: #{$elem-accent};
+                }
+            }
+
+            &:active:not(:disabled) {
+                border: 1px solid $elem-accent;
+                --l-button-background: #{$text-light};
+                --l-button-text: #{$elem-accent};
+            }
+
+            &[data-selected="true"] {
+                border: 1px solid $elem-accent;
+                --l-button-background: #{$text-light};
+                --l-button-text: #{$elem-accent};
+            }
+        }
+
+        &-error {
+            --l-button-background: #{$button-error-bg};
+            --l-button-text: #{$text-primary};
+            border: 1px solid $button-secondary-bg;
+            max-width: 73px;
+
+
+            @media(hover: hover) {
+                &:hover:not(:disabled) {
+                    --l-button-background: #{$button-error-bg-hover};
+                }
+            }
+
+            &:active:not(:disabled) {
+                --l-button-background: #{$button-error-bg-active};
+            }
+        }
+    }
+}
+
+@media(max-width: 768px) {
+    .button {
+        &_view {
+            &-primary {
+                &:active:not(:disabled) {
+                    --l-button-background: #{$button-primary-bg-hover};
+                }
+            }
+
+            &-secondary {
+                &:active:not(:disabled) {
+                    --l-button-background: #{$button-secondary-bg-hover};
+                }
+            }
+
+            &-accent {
+                &:active:not(:disabled) {
+                    --l-button-background: #{button-accent-bg-hover};
+                }
+            }
+        }
+    }
+}
